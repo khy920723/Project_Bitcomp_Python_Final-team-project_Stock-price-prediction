@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <link rel="stylesheet" href="{% static 'chartapp/style.css' %}">
+    <title>Samsung Electronics Co</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script type="text/javascript" src="https://code.highcharts.com/modules/data.js"></script>
+    </head>
+
+<body>
+    <table>
+        <tr>
+
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-asterisk" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+<a href="http://localhost:8000/index/">Main<br />
+            </svg>
+        </tr>
+    </table>
+    <div id="container" style="min-width: 310px; height: 500px; margin: 0"></div>
+
+    <script type="text/javascript">
+
+        $.getJSON('/data.json', function(jsondata) {
+
+            Highcharts.chart('container', {
+
+               chart: {
+
+                    type: 'spline'
+
+                },
+                yAxis: {
+                    title: {
+                        text: 'Amount'
+                }},
+                title: {
+                    text: 'Samsung Etc [19/11 ~ 20/11]'
+                },
+
+                    data: jsondata,
+
+
+            });
+
+        });
+
+    </script>
+<div class="page-header">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        </div>
+</body>
+</html>
