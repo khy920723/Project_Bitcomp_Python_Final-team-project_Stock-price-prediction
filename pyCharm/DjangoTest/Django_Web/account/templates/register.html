@@ -1,0 +1,40 @@
+{% block contents %}
+    {% load static %}
+    	<title>BIT_Image_Analysis</title>
+		<meta charset="utf-8/ko" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+<div class="row mt-5">
+  <div class="col-12 text-center">
+        <section id="main" class="container">
+					<header>
+						<h2>Sign up</h2>
+                        <p>If you are not a member, please sign up.</p>
+                    </header>
+        </section>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-12">
+    {{ error }}
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-12">
+    <form method="POST" action=".">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}"
+          placeholder="{{ field.label }}" name="{{ field.name }}" />
+      </div>
+      {% if field.errors %}
+      <span style="color: red">{{ field.errors }}</span>
+      {% endif %}
+      {% endfor %}
+    <br>
+      <input type="submit" class="btn btn-primary" value="Sign Up">
+    </form>
+  </div>
+</div>
+{% endblock %}

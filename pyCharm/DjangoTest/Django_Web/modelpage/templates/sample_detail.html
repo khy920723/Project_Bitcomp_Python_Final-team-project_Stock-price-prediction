@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang = ko>
+	<head>
+		<title>Sample_Image_Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href = "{% static 'assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="/index">BIT_Project</a> Joo&Lim_Image_analysis</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="/index">Home</a></li>
+							<li>
+								<a href="/login" class="icon solid fa-angle-down">Sign Up</a>
+                            </li>
+                        </ul>
+                    </nav>
+				</header>
+                {% csrf_token %}
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Sample Image Analysis</h2>
+						<p>Attach the prepared photo</p>
+					</header>
+					<div class="box">
+						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+						<h3>This is a subheading</h3>
+						<p>Cep risus aliquam gravida cep ut lacus amet.</p>
+                    </div>
+                    <div id="mainhomebtn">
+    <div class="mbtn">
+        <a href="/sample">ggwt</a>
+    </div>
+</div>
+
+<p1>
+    {{ mush }}
+</p1>
+<p2>
+    <img src="{{ imim }}">
+</p2>
+<p5>
+    {{ ti }}
+</p5>
+<p3>
+    {{ txt }}
+</p3>
+
+<p4>
+    {{ A }}
+</p4>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+                        <li>&copy; Joo&Lim_BIT_Project. All rights reserved.</li>
+					</ul>
+				</footer>
+		</div>
+    	</body>
+</html>

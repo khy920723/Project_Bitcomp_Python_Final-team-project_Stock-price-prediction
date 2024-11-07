@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang = ko>
+	<head>
+		<title>Sample_Image_Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href = "{% static 'assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+		<form id="page-wrapper">
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="/index">BIT_Project</a> Joo&Lim_Image_analysis</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="/index">Home</a></li>
+							<li>
+								<a href="/login" class="icon solid fa-angle-down">Sign Up</a>
+                            </li>
+                        </ul>
+                    </nav>
+				</header>
+                {% csrf_token %}
+			<!-- Main -->
+            <section id="main" class="container">
+					<header>
+						<h2>Sample Image Analysis</h2>
+						<p>Attach the prepared photo</p>
+					<div class="box">
+						<span class="image featured"><img src="/images/pic01.jpg" alt="" /></span>
+                        <div class="box" id="mainhomebtn">
+                        </div><a href="/sample">ggwt</a>
+                        <form action="{% url 'img' %}" , method="Post", enctype="multipart/form-data">
+                            <p>Image</p>
+                            <p><input name="imgs" type="file" id="take-picture" accept="image/*"></p>
+                            <h2>이미지:</h2>
+                            <p><img src="about:blank" alt="" id="show-picture"></p>
+                            <input type="submit" value="Images Upload">
+                            <script src="/static/js/base.js"></script>
+                        </form>
+                    </div>
+                    </header>
+                </section>
+        </form>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+                        <li>&copy; Joo&Lim_BIT_Project. All rights reserved.</li>
+					</ul>
+				</footer>
+
+    	</body>
+</html>
